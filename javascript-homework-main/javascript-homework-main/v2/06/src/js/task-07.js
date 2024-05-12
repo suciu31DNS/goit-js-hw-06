@@ -3,3 +3,15 @@
 // <input id="font-size-control" type="range" min="16" max="96" />
 // <br />
 // <span id="text">Abracadabra!</span>
+
+const sizeControlInput = document.getElementById('font-size-control');
+const textElement = document.getElementById('text');
+
+const initialFontSize = sizeControlInput.value + 'px';
+textElement.style.fontSize = initialFontSize;
+
+const resizeFontForInput = event => {
+  textElement.style.fontSize = event.target.value + 'px';
+};
+
+sizeControlInput.addEventListener('input', resizeFontForInput);
